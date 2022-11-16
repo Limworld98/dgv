@@ -1,0 +1,18 @@
+div #contents{
+    margin-top : 200px;
+}
+
+#main-contents {
+    margin-top : 50px;
+}
+
+.carousel-inner img{
+    height : 500px;
+    border-radius: 30px;
+}
+
+.carousel-inner>div>div{
+    margin-top : 20px;
+    
+}
+
