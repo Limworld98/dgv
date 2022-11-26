@@ -18,9 +18,9 @@ repositories {
 }
 
 dependencies {
-	//implementation("org.springframework.boot:spring-boot-starter-data-jpa") //JPA dependency 추가
-	//implementation("org.springframework.boot:spring-boot-starter-jdbc") //JDBC dependency 추가
-	//implementation("mysql:mysql-connector-java") //mySQL DB connector 추가
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") //JPA dependency 추가
+	implementation("org.springframework.boot:spring-boot-starter-jdbc") //JDBC dependency 추가
+	implementation("mysql:mysql-connector-java") //mySQL DB connector 추가
 
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
