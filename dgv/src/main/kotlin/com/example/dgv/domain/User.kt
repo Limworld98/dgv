@@ -1,4 +1,4 @@
-package com.example.dgv.domain
+/*package com.example.dgv.domain
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -10,4 +10,4 @@ class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Long?=null
-}
+}*/
