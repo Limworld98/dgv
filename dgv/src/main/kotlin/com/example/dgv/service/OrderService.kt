@@ -15,8 +15,8 @@ class OrderService (val orderRepository: OrderRepository){
         return orderRepository.findByOrderid(orderid)
     }
 
-    fun findAllByMovieid(movieId : Long) : Order? {
-        return orderRepository.findAllByMovieid(movieId)
+    fun findAllByMovieid(movieid : Long) : Order? {
+        return orderRepository.findAllByMovieid(movieid)
     }
 
 
