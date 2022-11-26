@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service
 @Service
 class UserService(val userRepository: UserRepository) {
     fun findById(id: Long): User {
-        val tmp = userRepository.findById(id)
-        return tmp.get()
+        val temp = userRepository.findById(id)
+        return temp.get()
     }
 
     fun findByUserId(userId: String) : User?{

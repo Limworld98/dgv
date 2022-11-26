@@ -10,7 +10,7 @@ $(document).ready(function(){
         
         localStorage.setItem(`movieName`,$(this).attr(`movieName`));
 
-        location.href = 'movieTimes.html'
+        location.href = 'movieTimes'
 
 
     });
