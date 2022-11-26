@@ -2,9 +2,9 @@ $(document).ready(function(){
     console.log(`js file loaded`);
 
     //import header, footer, navbar
-    $(`#header`).load(`../templates/layouts/header.html`);
-    $(`#footer`).load(`../templates/layouts/footer.html`);
-    $(`#navbar`).load(`../templates/layouts/navbar.html`);
+    $(`#header`).load(`../layouts/header.html`);
+    $(`#footer`).load(`../layouts/footer.html`);
+    $(`#navbar`).load(`../layouts/navbar.html`);
 
     $(`.button1`).click(function(){
 
