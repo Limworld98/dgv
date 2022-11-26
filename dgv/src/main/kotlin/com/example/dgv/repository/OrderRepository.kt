@@ -1,4 +1,9 @@
 package com.example.dgv.repository
 
-interface OrderRepository {
+import com.example.dgv.domain.Order
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface OrderRepository : JpaRepository<Order,Long>{
+    fun findByOrderid(orderId : Long) : Order?
+    fun findAllByMovieid(movieId: Long) : Order?
 }

@@ -10,8 +10,12 @@ import javax.persistence.*
 @Getter
 @Setter
 @NoArgsConstructor
-class Order() {
+class Order(id:Long?, movieid: Long?, orderDate: String, price : Long) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var orderid:Long?=null
+    var id = id //예매자 고유 id ,외래키
+    var movieid = movieid //영화 고유 id, 외래키
+    var orderDate = orderDate
+    var price = price
 }

@@ -3,12 +3,15 @@ package com.example.dgv.service
 import com.example.dgv.domain.Movie
 import com.example.dgv.repository.MovieRepository
 import org.springframework.stereotype.Service
-import javax.persistence.Id
 
 @Service
 class MovieService (val movieRepository: MovieRepository){
-    fun findByMovieId(movieId: Long) : Movie? {
-        return movieRepository.findByMovieid(movieId)
+    fun save(movie: Movie){
+        movieRepository.save(movie);
+    }
+
+    fun findByMovieid(movieid: Long) : Movie? {
+        return movieRepository.findByMovieid(movieid)
     }
 
     fun findByMovieName(movieName: String) : Movie? {
