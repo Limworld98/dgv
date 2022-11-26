@@ -18,9 +18,9 @@ repositories {
 }
 
 dependencies {
-	//implementation("org.springframework.boot:spring-boot-starter-data-jpa") //JPA dependency 추가
-	//implementation("org.springframework.boot:spring-boot-starter-jdbc") //JDBC dependency 추가
-	//implementation("mysql:mysql-connector-java") //mySQL DB connector 추가
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") //JPA dependency 추가
+	implementation("org.springframework.boot:spring-boot-starter-jdbc") //JDBC dependency 추가
+	implementation("mysql:mysql-connector-java") //mySQL DB connector 추가
 
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -29,6 +29,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
