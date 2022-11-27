@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
+
+//회원가입 구현
 @Controller
 class SignUpController(val userService: UserService) {
 
@@ -34,17 +36,19 @@ class SignUpController(val userService: UserService) {
         val id = request.getParameter("id")
         val pw = request.getParameter("pw")
         val email = request.getParameter("email")
-        val age = request.getParameter("age").toInt()
+        val age = request.getParameter("age")
         val account = request.getParameter("account")
-
-        println(id)
 
         if(userService.findByUserId(id) != null){ // 아이디 중복검사
             return "<script>" + "alert(\"이미 있는 아이디입니다.\");" + "location.href=\"signUp\";" + "</script>";
         }
 
+        if(name.isEmpty() || id.isEmpty() || pw.isEmpty() || email.isEmpty() || age.isEmpty() || account.isEmpty()){ // 항목 누락
+            return "<script>" + "alert(\"일부 항목이 누락되었습니다. 정보를 모두 기입해주세요.\");" + "location.href=\"signUp\";" + "</script>";
+        }
 
-        userService.save(User(name,id,pw,email,age,account))
+
+        userService.save(User(name,id,pw,email,age.toInt(),account))
 
 
         }catch (e:Exception){

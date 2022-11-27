@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
+//로그인 및 로그아웃 구현
 @Controller
 class LoginController (val userService: UserService){
 
     @GetMapping("/login")
     fun login_page(session : HttpSession, response : HttpServletResponse) : String{
 
-        if(session.getAttribute("user") != null){ // 로그인 상태인데 회원가입하려 할 시
+        if(session.getAttribute("user") != null){ // 로그인 상태인데 로그인하려 할 시
             response.setContentType("text/html; charset=UTF-8");
-            val out : PrintWriter = response.getWriter();
+            val out : PrintWriter = response.writer;
             out.println("<script>" + "alert(\"이미 로그인 되어있습니다!\");" + "location.href=\"main\";" + "</script>");
             out.flush();
+            return "mainpage"
         }
         return "login"
     }
@@ -31,26 +33,26 @@ class LoginController (val userService: UserService){
         val id = request.getParameter("id")
         val pw = request.getParameter("pw")
         val userSearch = userService.findByUserId(id)
+        var success = false
 
-        if(userSearch == null) {// 아이디 자체가 존재하지 않음
-            response.setContentType("text/html; charset=UTF-8");
-            val out : PrintWriter = response.getWriter();
-            out.println("<script>" + "alert(\"존재하지 않는 아이디입니다" + "\");" + "location.href=\"login\";" + "</script>");
-            out.flush();
+        if(userSearch == null) {// 아이디가 존재하지 않음
         }
         else {
             if(pw == userSearch.password) {// 로그인 성공
                 session.setAttribute("user",userSearch)
-                return "main"
+                success = true
             }
             else {//아이디만 일치
-                response.setContentType("text/html; charset=UTF-8");
-                val out : PrintWriter = response.getWriter();
-                out.println("<script>" + "alert(\"비밀번호가 일치하지 않습니다." + "\");" + "location.href=\"login\";" + "</script>");
-                out.flush();
             }
         }
 
-        return "main" //미사용
+        return if(!success) "<script>" + "alert(\"아이디 혹은 비밀번호가 일치하지 않습니다.\");" + "location.href=\"login\";" + "</script>";
+        else  "<script>" + "location.href=\"main\";" + "</script>";
+    }
+
+    @GetMapping("/logout")
+    fun logout(session: HttpSession) : String{
+        session.invalidate()
+        return "mainpage"
     }
 }

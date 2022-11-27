@@ -27,10 +27,12 @@
                 </div>
                 <div class="col-7">
                   <br><br>
-                  <a  href="login" >로그인하기</a> <br>
+<!--                  <a th:if="${session.user != null}" href="login" >마이페이지</a> <br>-->
+                  <a th:if="${session.user != null}" href="logout" >로그아웃</a> <br>
+                  <a th:if="${session.user == null}" href="login" >로그인하기</a> <br>
                   <hr>
 
-                  <a  href="signUp" >계정이 없으세요? 회원가입하기</a>
+                  <a th:if="${session.user == null}" href="signUp" >계정이 없으세요? 회원가입하기</a>
 
                 </div>
               </div>

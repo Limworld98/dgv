@@ -1,54 +1,43 @@
 package com.example.dgv.controller
 
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import java.io.PrintWriter
 import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
+import javax.servlet.http.HttpSession
+
+//메인페이지 및 마이페이지 구현
+//마이페이지에서는 orders DB 에서 현재 유저의 예약만 찾아서 보여줘야함. session에서 유저 id 추출하면 되겠지?
 
 @Controller
 class MainController {
 
     @GetMapping("/")
-    fun index(req : HttpServletRequest) : String{
+    fun index(request : HttpServletRequest) : String{
         return "mainpage"
     }
 
     @GetMapping("/main")
-    fun main(req : HttpServletRequest) : String{
+    fun main(request : HttpServletRequest) : String{
         return "mainpage"
     }
 
     @GetMapping("/list")
-    fun list(req : HttpServletRequest) : String{
+    fun list(session: HttpSession, response: HttpServletResponse, request : HttpServletRequest, model : Model) : String? {
+        if(session.getAttribute("user") == null){ // 유저 로그인 체크
+            response.contentType = "text/html; charset=UTF-8";
+            val out : PrintWriter = response.writer;
+            out.println("<script>" + "alert(\"먼저 로그인을 해주세요\");" + "location.href=\"login\";" + "</script>");
+            out.flush();
+            return null
+        }
+
+
         return "list"
     }
 
-    @GetMapping("/changeSeat")
-    fun changeSeat(req : HttpServletRequest) : String{
-        return "changeSeat"
-    }
 
-    @GetMapping("/movieList")
-    fun movieList(req : HttpServletRequest) : String{
-        return "movieList"
-    }
 
-    @GetMapping("/movieTimes")
-    fun movieTimes(req : HttpServletRequest) : String{
-        return "movieTimes"
-    }
-
-    @GetMapping("/payback")
-    fun payback(req : HttpServletRequest) : String{
-        return "payback"
-    }
-
-    @GetMapping("/payment")
-    fun payment(req : HttpServletRequest) : String{
-        return "payment"
-    }
-
-    @GetMapping("/seats")
-    fun seats(req : HttpServletRequest) : String{
-        return "seats"
-    }
 }
