@@ -15,11 +15,11 @@ import javax.servlet.http.HttpSession
 class SignUpController(val userService: UserService) {
 
     @GetMapping("/signUp")
-    fun signup_form(session : HttpSession, response : HttpServletResponse, req : HttpServletRequest) : String{
+    fun signUp_page(session : HttpSession, response : HttpServletResponse) : String{
         if(session.getAttribute("user") != null){ // 로그인 상태인데 회원가입하려 할 시
             response.setContentType("text/html; charset=UTF-8");
             val out : PrintWriter = response.getWriter();
-            out.println("<script>" + "alert(\"이미 회원입니다!\");" + "location.href=\"/\";" + "</script>");
+            out.println("<script>" + "alert(\"이미 회원입니다!\");" + "location.href=\"main\";" + "</script>");
             out.flush();
         }
         return "signUp"
@@ -28,14 +28,14 @@ class SignUpController(val userService: UserService) {
 
     @PostMapping("/signUp")
     @ResponseBody
-    fun signUp(req: HttpServletRequest) : String{
+    fun signUp(request: HttpServletRequest) : String{
         try{
-        val name = req.getParameter("name")
-        val id = req.getParameter("id")
-        val pw = req.getParameter("pw")
-        val email = req.getParameter("email")
-        val age = req.getParameter("age").toInt()
-        val account = req.getParameter("account")
+        val name = request.getParameter("name")
+        val id = request.getParameter("id")
+        val pw = request.getParameter("pw")
+        val email = request.getParameter("email")
+        val age = request.getParameter("age").toInt()
+        val account = request.getParameter("account")
 
         println(id)
 
