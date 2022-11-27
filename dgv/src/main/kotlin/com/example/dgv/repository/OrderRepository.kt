@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface OrderRepository : JpaRepository<Order,Long>{
     fun findByOrderid(orderid:Long) : Order?
-    fun findAllByMovieid(movieid: Long) : Order?
+    fun findByMovieid(movieid:Long) : Order?
 }

@@ -14,7 +14,7 @@ $(document).ready(function(){
     $(`.button2`).click(function(){
 
         localStorage.setItem(`movieName`,$(this).attr(`movieName`));
-        location.href = 'seats';
+        location.href = 'changeSeat';
 
         });
 
