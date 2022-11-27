@@ -15,7 +15,7 @@ $(document).ready(function(){
     $(`button`).click(function(){
         
         localStorage.setItem(`movieName`,movieName);
-        location.href = `seats.html`;
+        location.href = `seats`;
     });
 
 

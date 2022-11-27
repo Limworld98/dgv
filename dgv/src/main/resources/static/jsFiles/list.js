@@ -8,13 +8,13 @@ $(document).ready(function(){
 
     $(`.button1`).click(function(){
 
-        location.href = 'payback.html';
+        location.href = 'payback';
 
     });
     $(`.button2`).click(function(){
 
         localStorage.setItem(`movieName`,$(this).attr(`movieName`));
-        location.href = 'seats.html';
+        location.href = 'seats';
 
         });
 

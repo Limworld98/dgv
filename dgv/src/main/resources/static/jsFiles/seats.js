@@ -79,7 +79,7 @@ $(document).ready(function(){
 
   $(`button`).click(function(){
     localStorage.setItem(`totalPrice`,$(`#total-price`).text());
-    location.href = `payment.html`;
+    location.href = `payment`;
   });
   
 

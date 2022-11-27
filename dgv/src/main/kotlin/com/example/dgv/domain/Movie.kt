@@ -10,13 +10,13 @@ import javax.persistence.*
 @Getter
 @Setter
 @NoArgsConstructor
-class Movie(movieName : String, director : String, genre : String, time : Int, limit : Int) {
+class Movie(movieName : String, director : String, genre : String, time : Long, agelimit : Long) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var movieid:Long?=null
-    var movieName = movieName
-    var director = director
-    var genre = genre
-    var time = time
-    var limit = limit
+    var movieName : String = movieName
+    var director : String = director
+    var genre : String = genre
+    var time : Long = time
+    var agelimit : Long = agelimit
 }

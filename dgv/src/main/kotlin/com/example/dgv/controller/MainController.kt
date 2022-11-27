@@ -22,16 +22,6 @@ class MainController {
         return "list"
     }
 
-    @GetMapping("/signUp")
-    fun signUp(req : HttpServletRequest) : String{
-        return "signUp"
-    }
-
-    @GetMapping("/login")
-    fun login(req : HttpServletRequest) : String{
-        return "login"
-    }
-
     @GetMapping("/changeSeat")
     fun changeSeat(req : HttpServletRequest) : String{
         return "changeSeat"
