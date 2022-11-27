@@ -11,7 +11,7 @@
         <!-- import navbar -->
         <div id="navbar"></div>  
         
-        <h2 class="text-center" style="margin-top: 20px;">DGV 회원가입</h3><br><br>
+        <h2 class="text-center" style="margin-top: 20px;">DGV 회원가입</h2><br><br>
         <h4 class="text-center">DGV에 가입해서 다양한 혜택을 누리세요!</h4><br><hr>
         <div class="row bg-info">
             <div class="col-6 text-center">
@@ -28,18 +28,29 @@
                 <br><br>
                 <form style="margin-bottom: 30px;">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">가입 이메일</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">이메일은 DGV 회원정보 외의 목적으로 사용되지 않습니다</div>
+                        <label class="form-label">실명</label>
+                        <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">비밀번호</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
-                      <div id="emailHelp" class="form-text">비밀번호는 8~20자 사이의 영문, 특수문자의 조합이어야 합니다</div>
+                        <label class="form-label">닉네임</label>
+                        <input name="nickName" type="text" class="form-control" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">비밀번호 중복확인</label>
-                      <input type="password" class="form-control" id="exampleInputPassword2">
+                        <label class="form-label">비밀번호</label>
+                        <input name="password" type="text" class="form-control" aria-describedby="emailHelp">
+                        <div class="form-text">비밀번호는 8~20자 사이의 영문, 특수문자의 조합이어야 합니다</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">이메일</label>
+                        <input name="email" type="text" class="form-control" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">나이</label>
+                        <input name="age" type="text" class="form-control" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">계좌</label>
+                        <input name="account" type="text" class="form-control" aria-describedby="emailHelp">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">회원가입하기</button>
