@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
+
+//회원가입 구현
 @Controller
 class SignUpController(val userService: UserService) {
 

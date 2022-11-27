@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
+//로그인 및 로그아웃 구현
 @Controller
 class LoginController (val userService: UserService){
 
