@@ -22,10 +22,16 @@ class ReserveController (val movieService: MovieService , val movieDeatilsServic
         return "movieList"
     }
 
-//    @GetMapping("/movieTimes")
-//    fun movieTimes(request : HttpServletRequest) : String{
-//        return "movieTimes"
-//    }
+
+    //주석 해제함
+    @GetMapping("/movieTimes")
+    fun getMovieTimes(request : HttpServletRequest) : String{
+
+
+
+        return "movieTimes"
+    }
+
 
     @PostMapping("/movieTimes")
     @ResponseBody

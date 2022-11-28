@@ -29,10 +29,12 @@ $(document).ready(function(){
     <li class="list-group-item text-end">${movie.genre}</strong></li>
      <li class="list-group-item text-end">${movie.agelimit}세</strong></li>
      <li class="list-group-item text-end">
+    
      <form action="movieTimes" method="post">
-     <input type="hidden" name="movieName" value="${movie.movieName}">
-     <button class="btn btn-info">예매하기</button>
+     <button type="submit" class="btn btn-info" movieName="${movie.movieName}">예매하기</button>
     </form>
+     
+ 
      </strong></li>
   </ul>
 </div> 
@@ -45,6 +47,7 @@ $(document).ready(function(){
     }
 
 
+    // //버튼 리스너
     // $(`table`).on(`click`,`button`,function(){
     //     localStorage.setItem(`movieName`,$(this).attr(`movieName`));
     //
