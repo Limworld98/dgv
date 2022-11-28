@@ -30,9 +30,9 @@ $(document).ready(function(){
      <li class="list-group-item text-end">${movie.agelimit}세</strong></li>
      <li class="list-group-item text-end">
     
-     <form action="movieTimes" method="post">
+     <!-- <form action="movieTimes" method="post"> -->
      <button type="submit" class="btn btn-info" movieName="${movie.movieName}">예매하기</button>
-    </form>
+    <!-- </form> -->
      
  
      </strong></li>
@@ -47,11 +47,11 @@ $(document).ready(function(){
     }
 
 
-    // //버튼 리스너
-    // $(`table`).on(`click`,`button`,function(){
-    //     localStorage.setItem(`movieName`,$(this).attr(`movieName`));
-    //
-    //     location.href = 'movieTimes'
-    // });
+    //버튼 리스너
+    $(`table`).on(`click`,`button`,function(){
+        localStorage.setItem(`movieName`,$(this).attr(`movieName`));
+
+        location.href = 'movieTimes'
+    });
 
 });

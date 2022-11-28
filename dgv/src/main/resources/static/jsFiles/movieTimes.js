@@ -12,6 +12,36 @@ $(document).ready(function(){
     
     $(`#movieName`).text(`DGV ${movieName} 시간표`);
 
+    var movieScreeningTime;
+
+    movieTimes.forEach(function(movie){
+        if (movie.movieName===movieName){
+            console.log("선택한 영화 : "+movieName);
+            movieScreeningTime = movie.movieScreeningTime;
+        }
+    })
+
+    console.log(movieScreeningTime);
+    console.log(movieScreeningTime[0]);
+
+    for (var i=0;i<5;i++){
+        if (movieScreeningTime[i]==='1'){
+            $(`#${i}`).append(`
+                <td>잔여좌석 : 20석</td>
+                <td><button type="button" class="btn btn-info" movieName="#">예매하기</button></td>
+            `)
+        } else {
+            $(`#${i}`).append(`
+                <td></td>
+                <td></td>
+            `).attr(`class`,`bg-secondary`);
+        }
+    }
+
+
+
+
+
     $(`button`).click(function(){
         
         localStorage.setItem(`movieName`,movieName);
