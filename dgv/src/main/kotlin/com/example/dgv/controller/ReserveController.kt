@@ -25,24 +25,22 @@ class ReserveController (val movieService: MovieService , val movieDeatilsServic
 
     //주석 해제함
     @GetMapping("/movieTimes")
-    fun getMovieTimes(request : HttpServletRequest) : String{
-
-
-
-        return "movieTimes"
-    }
-
-
-    @PostMapping("/movieTimes")
-    @ResponseBody
-    fun movieTimes(model : Model, request : HttpServletRequest) : String{
-        val movie_Name = request.getParameter("name") //영화 목록 페이지에서 예매하기 버튼 클릭시 post형태로 movietimes로 이동, 영화이름 전달
-        //시간대는 일괄적으로 현재 html 지정대로 고정, 잔여좌석은 Orders 데이터베이스에서 해당 영화 이름의 시간대로 select 해서 연산
-        var movieTimes = movieDeatilsService.findByMoviename(movie_Name)
-
+    fun getMovieTimes(model : Model,request : HttpServletRequest) : String{
+        var movieTimes = movieDeatilsService.findAll()
         model.addAttribute("movieTimes",movieTimes)
         return "movieTimes"
     }
+
+
+//    @PostMapping("/movieTimes")
+//    @ResponseBody
+//    fun movieTimes(model : Model, request : HttpServletRequest) : String{
+//        val movie_Name = request.getParameter("name") //영화 목록 페이지에서 예매하기 버튼 클릭시 post형태로 movietimes로 이동, 영화이름 전달
+//        //시간대는 일괄적으로 현재 html 지정대로 고정, 잔여좌석은 Orders 데이터베이스에서 해당 영화 이름의 시간대로 select 해서 연산
+//        var movieTimes = movieDeatilsService.findAll()
+//        model.addAttribute("movieTimes",movieTimes)
+//        return "movieTimes"
+//    }
 
 
     @GetMapping("/seats")
