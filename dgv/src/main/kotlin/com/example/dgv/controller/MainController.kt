@@ -24,7 +24,7 @@ class MainController {
         return "mainpage"
     }
 
-    @GetMapping("/list")
+    @GetMapping("/myMovies")
     fun list(session: HttpSession, response: HttpServletResponse, request : HttpServletRequest, model : Model) : String? {
         if(session.getAttribute("user") == null){ // 유저 로그인 체크
             response.contentType = "text/html; charset=UTF-8";
@@ -35,9 +35,20 @@ class MainController {
         }
 
 
-        return "list"
+        return "myMovies"
     }
 
+    @GetMapping("/seatChange")
+    fun seatChange(session : HttpSession, response: HttpServletResponse, request : HttpServletRequest) : String? {
+        response.contentType = "text/html;charset=UTF-8";
+        return "seatChange"
+    }
+
+    @GetMapping("/seatRefund")
+    fun seatRefund(session : HttpSession, response: HttpServletResponse, request : HttpServletRequest) : String? {
+        response.contentType = "text/html;charset=UTF-8";
+        return "seatRefund"
+    }
 
 
 }

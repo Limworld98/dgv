@@ -27,7 +27,7 @@ $(document).ready(function(){
     for (var i=0;i<5;i++){
         if (movieScreeningTime[i]==='1'){
             $(`#${i}`).append(`
-                <td>잔여좌석 : 20석</td>
+                <td>잔여좌석 : 60석</td>
                 <td><button type="button" class="btn btn-info" movieName="#">예매하기</button></td>
             `)
         } else {
