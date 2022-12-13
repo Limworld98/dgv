@@ -49,5 +49,10 @@ $(document).ready(function(){
 
     });
 
+    $(`#done`).click(function(){
+        alert(`결제 완료! 이용해주셔서 감사합니다`);
+        document.location.href=`main`;
+    })
+
 
 });
